@@ -1,0 +1,23 @@
+name: GitHub Actions for Hello World App #name of the workflow
+
+on: [push] #whenever we push to trigger the workflow
+
+jobs:
+  Hello_World_App: #name of the job
+    runs-on: ubuntu-latest #name of the operating system
+    steps:
+      - name: checkout # name of the step
+        uses: actions/checkout@v3
+      
+      - name: to verify the node version and npm version
+        run: |
+          node -v
+          npm -v
+
+      - name: to check the current working directory and list out the files in current directory
+        run: |
+          pwd
+          ls -a
+
+      - name: to print the hello world in nodejs
+        run: node index.js
